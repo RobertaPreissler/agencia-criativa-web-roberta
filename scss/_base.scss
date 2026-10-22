@@ -1,0 +1,97 @@
+
+@use "variaveis" as v;
+@use "mixins" as m;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  margin: 0;
+  color: v.$cor-tinta;
+  background: v.$cor-branca;
+  font-family: v.$fonte-texto;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.layout-container {
+  @include m.container-centralizado;
+}
+
+.section {
+  @include m.espacamento-secao;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: v.$fonte-titulo;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 4.1vw, 3.25rem);
+}
+
+h2 span,
+h1 span {
+  color: v.$cor-roxo;
+}
+
+p {
+  color: v.$cor-texto;
+}
+
+.eyebrow {
+ margin-bottom: v.$espacamento * 0.5;
+  color: v.$cor-roxo;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.eyebrow .eyebrow__dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.45rem;
+  border-radius: 50%;
+  background: v.$cor-verde;
+}
